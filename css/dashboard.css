@@ -1,0 +1,26 @@
+/* bootstrap override */
+
+.container-fluid{
+	padding-top:10px;
+}
+.well{
+	padding-top: 5px;
+}
+
+/* widget core */
+.widget-header{
+	padding: 3px 10px;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+}
+.widget-body{
+	padding: 15px;
+}
+
+
+/* numeric widget */
+.numeric-widget{
+	padding: 15px 0;
+	font-size: 50px;
+	text-align:center;
+}
