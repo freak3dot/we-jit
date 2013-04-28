@@ -1,0 +1,4 @@
+# robots.txt to disallow all robots everywhere
+
+User-agent: *
+Disallow: /

@@ -1,0 +1,50 @@
+# Specify a character set early for your HTML documents to allow the browser to begin executing scripts immediately.
+AddDefaultCharset UTF-8
+
+# Don't display indexs for security
+Options -Indexes
+
+# RewriteCond %{REQUEST_URI} !/maint.php$ 
+# RewriteRule $ /maint.php [R=302,L] 
+
+<IfModule mod_rewrite.c>
+	# Fix Canonical for Search Engines
+	#RewriteEngine On
+	#RewriteBase /
+
+	#RewriteCond %{HTTP_HOST} !^www\.example\.com [NC]
+	#RewriteRule ^(.*)$ http://www.example.com/$1 [R=301,L]
+
+
+</IfModule>
+
+# BEGIN GZIP compression
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/text text/html text/plain application/xml text/xml text/css application/x-javascript text/javascript application/javascript
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+# END GZIP
+
+# Enable caching - disabled for dev
+#<IfModule mod_expires.c>
+#	ExpiresActive On
+#	ExpiresDefault "access plus 1 seconds"
+#	ExpiresByType image/vnd.microsoft.icon "access plus 9 years"#
+#	ExpiresByType image/x-icon "access plus 9 years"
+#	ExpiresByType image/jpeg "access plus 9 years"
+#	ExpiresByType image/png "access plus 9 years"
+#	ExpiresByType image/gif "access plus 9 years"
+#	ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+#	ExpiresByType text/css "access plus 604800 seconds"
+#	ExpiresByType text/xml "access plus 604800 seconds"
+#	ExpiresByType text/javascript "access plus 604800 seconds"
+#	ExpiresByType application/javascript "access plus 604800 seconds"
+#</IfModule>
+
+# BEGIN Remove Last-Modified Header
+<IfModule mod_headers.c>
+  Header unset Last-Modified
+</IfModule>
+# END Remove Last-Modified Header
