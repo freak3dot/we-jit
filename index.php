@@ -10,10 +10,8 @@
 
 	// query dashboard in database
 	
+
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>

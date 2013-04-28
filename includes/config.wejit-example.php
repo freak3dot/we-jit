@@ -18,10 +18,10 @@ $config = array(
 
 // Paths
 $config['SERVERPATH'] = $_SERVER['DOCUMENT_ROOT'] . '/';
-if(strcmp($_SERVER['HTTPS'],'')!=0){
-	$config['URLPATH' = 'https://' . $_SERVER['HTTP_HOST'] . '/';
+if(isset( $_SERVER['HTTPS'] ) && strcmp($_SERVER['HTTPS'],'')!=0){
+	$config['URLPATH'] = 'https://' . $_SERVER['HTTP_HOST'] . '/';
 } else {
-	$config['URLPATH' = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+	$config['URLPATH'] = 'http://' . $_SERVER['HTTP_HOST'] . '/';
 }
 
 // Error reporting.
