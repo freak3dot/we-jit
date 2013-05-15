@@ -24,6 +24,9 @@ if(isset( $_SERVER['HTTPS'] ) && strcmp($_SERVER['HTTPS'],'')!=0){
 	$config['URLPATH'] = 'http://' . $_SERVER['HTTP_HOST'] . '/';
 }
 
+// Spaces and lines
+define('NL', "\n");
+
 // Error reporting.
 ini_set('error_reporting', 'false');  
 error_reporting(E_NONE); 
